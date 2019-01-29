@@ -2,12 +2,12 @@
 //DEPENDENCIES 
 const axios = require("axios");
 
-//CREATE RANDOM 3 DIGIT NUMBER TO APPEND CARD NUMBER
+//GENERATE RANDOM 3 DIGIT NUMBER TO APPEND CARD NUMBER
 const randomThree = Math.floor(Math.random() * (999 - 1 + 1) + 1).toString()
 
 // FIEDL CARD DATA REQUIRED TO GENERATE TEST CARD OBJ FROM FIDEL API
 const fidelCardData = {
-  "number": `4444000000004${randomThree}`, // DECREMENT BY 1 EVERYTIME A POST REQUEST IS MADE TO FIDEL API
+  "number": `4444000000004${randomThree}`, // CREATE A UNIQUE CARD NUMBER FOR EVERY HIT TO THE FIDEL API
   "expMonth": 10,
   "expYear": 2019,
   "countryCode": "GBR",
