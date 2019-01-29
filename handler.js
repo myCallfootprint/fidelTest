@@ -1,13 +1,13 @@
 'use strict';
 
 module.exports.fidelTest = async (event, context) => {
-
+// DEPENDENCIES
   const lookUp = require('binlookup')();
-
+// VALIDATION OF BODY OBJECT
   if (event.httpMethod === "POST" && event.body) {
     let json = JSON.parse(event.body)
     let firstNumbers = json.fisrtNumbers;
-    let newCard = Object.assign({}, json, { firstNumbers: 46590136 });
+    let newCard = Object.assign({}, json, { firstNumbers: 46590136 }); // INSERT LIVE CARD BIN
 
     return lookUp(newCard.firstNumbers)
       .then(res => {
@@ -32,6 +32,4 @@ module.exports.fidelTest = async (event, context) => {
 
   };
 
-  // Use this code if you don't use the http event with the LAMBDA-PROXY integration
-  // return { message: 'Go Serverless v1.0! Your function executed successfully!', event };
 };
